@@ -1,9 +1,9 @@
-var app = angular.module("pmApp", ["ui.router", "angularModalService"]);
+var app = angular.module("pmApp", ["ui.router"]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
-    
+
     $urlRouterProvider.otherwise("/home");
-    
+
     $stateProvider
     .state("Home", {
         url: "/home",
@@ -32,7 +32,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: "/bulletin",
         templateUrl: "templates/bulletin.html",
         controller: "bulletinCtrl",
-        
+
         resolve: {
             currentUser: function(userService) {
                 return userService.getUser(true);
@@ -43,7 +43,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: "/pictures",
         templateUrl: "templates/pictures.html",
         controller: "picCtrl",
-        
+
         resolve: {
             currentUser: function(userService) {
                 return userService.getUser(true);
@@ -54,7 +54,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: "/pictures/:albumId",
         templateUrl: "templates/album.html",
         controller: "picIdCtrl",
-        
+
         resolve: {
             currentUser: function(userService) {
                 return userService.getUser(true);
@@ -66,7 +66,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: "templates/admin/aBulletin.html",
         controller: "bulletinCtrl",
         displayName: "Bulletin",
-        
+
         resolve: {
             currentUser: function(userService) {
                 return userService.getUser(true, true);
@@ -78,7 +78,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: "templates/admin/aPictures.html",
         controller: "picCtrl",
         displayName: "Pictures",
-        
+
         resolve: {
             currentUser: function(userService) {
                 return userService.getUser(true, true);
@@ -90,12 +90,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: "templates/admin/aAlbum.html",
         controller: "picIdCtrl",
         displayName: "Album",
-        
+
         resolve: {
             currentUser: function(userService) {
                 return userService.getUser(true, true);
             }
         }
     })
-    
+
 })
