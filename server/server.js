@@ -69,6 +69,6 @@ app.put("/api/albums/:id", forceAdmin, albums.addPic);
 app.put("/api/albums/:id/:picId", forceAdmin, albums.removeFromS3, albums.deletePic);
 
 
-app.listen(8000, function() {
-    console.log("listening on port 8000");
+app.listen(secret.port, function() {
+    console.log("listening on port " + secret.port);
 })
