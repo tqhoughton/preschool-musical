@@ -1,0 +1,19 @@
+<span class="row">
+    <a class="col s2" ng-class="{font_white: route == 'Home'}" ui-sref="Home">Home</a>
+    <span ng-show="isUser == true">
+        <a class="col s2" ui-sref="Log In" ng-click="logOut()">Log Out</a>
+    </span>
+    <span ng-show="isUser == false">
+        <a class="col s2" ng-class="{font_white: route == 'Log In'}" ui-sref="Log In">Log In</a>
+    </span>
+    <span ng-show="isAdmin == false">
+        <a class="col s2" ng-class="{font_white: route == 'Bulletin'}" ui-sref="Bulletin">Bulletin</a>
+        <a class="col s2" ng-class="{font_white: route == 'Pictures'}" ui-sref="Pictures">Pictures</a>
+    </span>
+    <span ng-show="isAdmin == true">
+        <a class="col s2" ng-class="{font_white: route == 'AdminBulletin'}" ui-sref="AdminBulletin">Bulletin</a>
+        <a class="col s2" ng-class="{font_white: route == 'AdminPictures'}" ui-sref="AdminPictures">Pictures</a>
+    </span>
+    <a class="col s2" ng-class="{font_white: route == 'About'}" ui-sref="About">About</a>
+    <a class="col s2" ng-class="{font_white: route == 'Contact'}" ui-sref="Contact">Contact</a>
+</span>

@@ -1,0 +1,16 @@
+<navbar class="navbars"></navbar>
+<div class="displayOnDesktop">
+    <h1>Preschool Musical</h1>
+    <real-navbar class="real-navbar"></real-navbar>
+</div>
+<div class="valign-wrapper whole-page">
+    <div class="container valign">
+        <h2>Client Sign In</h2>
+        <form>
+            <input ng-model="email" type="email" placeholder="email">
+            <input ng-model="password" type="password" placeholder="password">
+            <a class="waves-effect waves-light btn" ng-click="loginUser(email, password)" type="submit">Log In</a>
+        </form>
+        <p class="textbox">Don't have an account? Click <a ui-sref="Register">here</a> to create an account!</p>
+    </div>
+</div>

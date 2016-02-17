@@ -1,0 +1,45 @@
+<navbar class="navbars"></navbar>
+<navbar-under-admin class="navbars"></navbar-under-admin>
+<div class="displayOnDesktop">
+    <h1>Preschool Musical</h1>
+    <real-navbar class="real-navbar"></real-navbar>
+</div>
+<a class="btn-floating btn-large waves-effect waves-light" id="addItem" ng-click="openCreateModal()"><i class="large material-icons">add</i></a>
+<div class="container">
+    <h2 class="navbar_clear_under">Select an Album</h2>
+    <div ng-repeat="album in albums" class="albumCover textbox relative">
+        <pic-options-mobile></pic-options-mobile>
+        <h3>{{album.name}}</h3>
+        <img ng-src="https://s3-us-west-2.amazonaws.com/preschoolmusical/{{album.pics[0].url}}" ui-sref="AdminAlbum({albumId:'{{album._id}}'})">
+    </div>
+</div>
+<div id="createModal" class="modal">
+    <div class="modal-content">
+        <h3>Create Album</h3>
+        <input type="file" multiple id="file"><br/>
+        <input type="text" ng-model="albumName" placeholder="album name...">
+        <!--<div>Who would you like to see this album?</div>
+        <input type="checkbox" class="filled-in" id="mwf" checked="checked" />
+        <label for="mwf">M/W/F Class</label>
+        <input type="checkbox" class="filled-in" id="tth" checked="checked" />
+        <label for="tth">T/Th Class</label>-->
+    </div>
+    <div class="modal-footer">
+        <div class="container-footer">
+            <a id="closeBackdrop" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a id="closeBackdrop" class="modal-action modal-close waves-effect waves-green btn-flat align-left" ng-click="uploadAlbum()">Submit</a>
+        </div>
+    </div>
+</div>
+<div id="deleteModal" class="pictureRoute modal">
+    <div class="modal-content">
+        <p>Are you sure you want to delete this album?</p>
+        <p style="font-family: Impact; color: black; text-align: center">WARNING:<br/>ALL PICTURES IN THIS ALBUM WILL BE DELETED</p>
+    </div>
+    <div class="modal-footer">
+        <div class="container-footer">
+            <a id="closeBackdrop" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a id="closeBackdrop" class="modal-action modal-close waves-effect waves-green btn-flat align-left" ng-click="deleteAlbum(currentAlbum)">Confirm</a>
+        </div>
+    </div>
+</div>

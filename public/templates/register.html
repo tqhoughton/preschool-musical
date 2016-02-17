@@ -1,0 +1,54 @@
+<navbar class="navbars"></navbar>
+<div class="displayOnDesktop">
+    <h1>Preschool Musical</h1>
+    <real-navbar class="real-navbar"></real-navbar>
+</div>
+<div class="container page">
+    <form ng-show="step==1" id="step1">
+        <h2 class="navbar_clear">Step 1: Sign Up</h2>
+        Email <input type="email" ng-model="newUser.email">
+        Password <input type="password" ng-model="password1">
+        Confirm Password <input type="password" ng-model="password2">
+        <a class="waves-effect waves-light btn" ng-click="step=2">Next Step</a>
+    </form>
+    <form ng-show="step==2" id="step2">
+        <h2 class="navbar_clear">Step 2: Class Info</h2>
+        <div class= "textbox">
+            <h3 class="firsth3">Parent Information</h3><br/>
+            <div class="row">
+                <div class="col s6">
+                    First name<br/> <input type="text" ng-model="newUser.firstName">
+                </div>
+                <div class="col s6">
+                    Last name<br/> <input type="text" ng-model="newUser.lastName">
+                </div>
+            </div>
+            <h3>Student Information</h3>
+            <div class="row">
+                <div class="col s6">
+                    First name<br/> <input type="text" ng-model="newUser.studentFirstName">
+                </div>
+                <div class="col s6">
+                    Last name<br/> <input type="text" ng-model="newUser.studentLastName">
+                </div>
+            </div>
+            <!--<div class="input-field col s12">
+                <select>
+                    <option value="" disabled>Select your class</option>
+                    <option value="mwf" id="options1">M/W/F 9-12PM</option>
+                    <option value="tth" id="options2">T/Th 9-12PM</option>
+                </select>
+                <label>Class</label>
+            </div>-->
+            Secret word (for your class)<br/><input type="password" ng-model="newUser.secretWord">
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <a class="waves-effect waves-light btn" ng-click="step=1" ng-click="step = 1">Back</a>
+            </div>
+            <div class="col s6">
+                <a class="waves-effect waves-light btn" ng-click="signUp(newUser, password1, password2); goToLogin()">Sign Up</a>
+            </div>
+        </div>
+    </form>
+</div>

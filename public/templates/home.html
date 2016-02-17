@@ -1,0 +1,29 @@
+<h1>Preschool Musical</h1>
+<h2>Where Education Sings!!</h2>
+<div class="displayOnDesktop">
+    <real-navbar class="real-navbar"></real-navbar>
+    <p class="container textbox">
+        <span class="underlined">First time here as a client?</span><br/>
+        Click <a ui-sref="Register">here</a> to sign up for an account!<br/>
+        <span class="underlined">Have an account?</span><br/>
+        Click <a ui-sref="Log In">here</a> to login!<br/>
+        <span class="underlined">Want to learn more about Preschool Musical?</span><br/>
+        Click <a ui-sref="About">here</a> to learn more!
+    </p>
+</div>
+<div class="container" id="btn-container">
+    <div ng-show="showLogin">
+        <a ui-sref="Log In" class="waves-effect waves-light btn">Log In</a>
+        <a class="waves-effect waves-light btn" ui-sref="Register">Register</a>
+    </div>
+    <div ng-show="!showLogin && !adminRoute">
+        <a ui-sref="Bulletin" class="waves-effect waves-light btn">Bulletin</a>
+        <a class="waves-effect waves-light btn" ng-click="logOut()">Log Out</a>
+    </div>
+    <div ng-show="!showLogin && adminRoute">
+        <a ui-sref="AdminBulletin" class="waves-effect waves-light btn">Bulletin</a>
+        <a class="waves-effect waves-light btn" ng-click="logOut()">Log Out</a>
+    </div>
+    <a class="waves-effect waves-light btn" ui-sref="About">About</a>
+    <a class="waves-effect waves-light btn" ui-sref="Contact">Contact</a>
+</div>

@@ -1,0 +1,8 @@
+<div class="relative">
+    <a ng-click="toggleOptions = !toggleOptions" id="options" class="wave-effect relative">...</a>
+    <ul ng-show="toggleOptions" class="dropdown-list">
+        <li ng-click="toggleOptions = !toggleOptions">Cancel</li>
+        <li ng-click="openEditModal(post); toggleOptions = false">Edit</li>
+        <li ng-click="openDeleteModal(post); toggleOptions = false">Delete</li>
+    </ul>
+</div>

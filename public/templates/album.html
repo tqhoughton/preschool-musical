@@ -1,0 +1,11 @@
+<navbar3 class="navbars"></navbar3>
+<div class="displayOnDesktop">
+    <h1>Preschool Musical</h1>
+    <real-navbar class="real-navbar"></real-navbar>
+</div>
+<div class="container">
+    <h2 class="navbar_clear" id="albumTitle">{{album.name}}</h2>
+    <div ng-repeat="image in album.pics" class="textbox picbox relative" materialbox>
+        <img class="materialboxed" id="albumpic" ng-src="https://s3-us-west-2.amazonaws.com/preschoolmusical/{{image.url}}">
+    </div>
+</div>

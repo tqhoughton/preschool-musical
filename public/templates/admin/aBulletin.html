@@ -1,0 +1,64 @@
+<navbar class="navbars"></navbar>
+<navbar-under-admin class="navbars"></navbar-under-admin>
+<div class="displayOnDesktop">
+    <h1>Preschool Musical</h1>
+    <real-navbar class="real-navbar"></real-navbar>
+</div>
+<a class="btn-floating btn-large waves-effect waves-light" id="addItem" ng-click="openCreateModal()"><i class="large material-icons">add</i></a>
+<div class="container posts">
+    <div ng-repeat="post in posts track by $index">
+        <h2 ng-class="{navbar_clear_under: !$index}">{{post.title}}</h2>
+        <small>Author: {{post.author}}</small>
+        <options-mobile></options-mobile>
+        <p class="textbox">{{post.text}}</p>
+    </div>
+</div>
+
+<div id="createModal" class="modal">
+    <div class="modal-content">
+        <input type="text" placeholder="title" ng-model="newPost.title"><br/>
+        <textarea placeholder="enter description here..." ng-model="newPost.text"></textarea>
+    </div>
+    <div class="modal-footer">
+        <div class="container-footer">
+            <a id="closeBackdrop" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a id="closeBackdrop" class="modal-action modal-close waves-effect waves-green btn-flat align-left" ng-click="submitNewPost(newPost)">Submit</a>
+        </div>
+    </div>
+</div>
+
+<div id="deleteModal" class="modal">
+    <div class="modal-content">
+        <p>Are you sure you want to delete this post?</p>
+    </div>
+    <div class="modal-footer">
+        <div class="container-footer">
+            <a id="closeBackdrop" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a id="closeBackdrop" class="modal-action modal-close waves-effect waves-green btn-flat align-left" ng-click="deletePost(postToDelete)">Delete</a>
+        </div>
+    </div>
+</div>
+
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <input type="text" placeholder="title" ng-model="currentPost.title"><br/>
+        <textarea placeholder="enter description..." ng-model="currentPost.text"></textarea>
+    </div>
+    <div class="modal-footer">
+        <div class="container-footer">
+            <a id="closeBackdrop" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a id="closeBackdrop" class="modal-action modal-close waves-effect waves-green btn-flat align-left" ng-click="submitEditedPost(currentPost)">Save</a>
+        </div>
+    </div>
+</div>
+
+<!--<div ng-show="isDelete" class="popupShade">
+    <div class="popupBox">
+        <p>Are you sure you want to delete this post?</p>
+        <div class="footer">
+            <div class="popupContainer">
+                <a class="btn" ng-click="deleteSelectedPost()">Delete</a><a class="btn">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>-->

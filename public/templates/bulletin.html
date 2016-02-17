@@ -1,0 +1,13 @@
+<navbar class="navbars"></navbar>
+<navbar-under class="navbars"></navbar-under>
+<div class="showOnDesktop">
+    <h1>Preschool Musical</h1>
+    <real-navbar class="real-navbar"></real-navbar>
+</div>
+<div class="container posts">
+    <div ng-repeat="post in posts track by $index">
+        <h2 ng-class="{navbar_clear_under: !$index}">{{post.title}}</h2>
+        <small>Author: {{post.author}}</small>
+        <p class="textbox">{{post.text}}</p>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div>
+    <a ng-click="toggleOptions = !toggleOptions" id="picOptions" class="wave-effect">...</a>
+
+    <ul ng-show="toggleOptions" class="dropdown-list" id="picList">
+        <li ng-click="toggleOptions = !toggleOptions">Cancel</li>
+        <li ng-click="openDeleteModal(album); toggleOptions = false">Delete</li>
+    </ul>
+</div>
